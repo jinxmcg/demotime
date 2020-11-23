@@ -9,9 +9,11 @@ What is happening behind the scenes
 3. auto setup of mongodb 
 4. upload form and post files save them in mongodb (not optim just for demo and practice)
 5. convert DICOM to JPEG capture output and display in browser
+6. delete file
+7. invented some tests to learn and play with the pytest and flask testing environment
 
 Estimated time to develop:
-2h
+5:30h
 # Install
 
 ```
