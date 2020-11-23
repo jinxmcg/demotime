@@ -8,14 +8,18 @@ services:
     environment:
       FLASK_ENV: ${FLASK_ENV}
       FLASK_CONFIG: ${FLASK_CONFIG}
+      MONGO_INITDB_HOSTNAME: ${MONGO_INITDB_HOSTNAME}
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_USERNAME: ${MONGO_INITDB_USERNAME}
+      MONGO_INITDB_PASSWORD: ${MONGO_INITDB_PASSWORD}
       MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_INITDB_PORT: ${MONGO_INITDB_PORT}
     command: flask run --host 0.0.0.0
     volumes:
       - ${PWD}:/opt/code
     ports:
-      - "5000:5000"
+      - 5000:5000
     links:
       - db
     depends_on:
@@ -26,11 +30,16 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_HOSTNAME: ${MONGO_INITDB_HOSTNAME}
+      MONGO_INITDB_USERNAME: ${MONGO_INITDB_USERNAME}
+      MONGO_INITDB_PASSWORD: ${MONGO_INITDB_PASSWORD}
       MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_INITDB_PORT: ${MONGO_INITDB_PORT}
     ports:
-      - 27017:27017
+      - ${MONGO_INITDB_PORT}:27017
     volumes:
       - mongodb_data_container:/data/db
+      - "$PWD/docker/mongo-entrypoint/:/docker-entrypoint-initdb.d/"
 
 volumes:
   mongodb_data_container:

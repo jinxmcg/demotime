@@ -15,7 +15,14 @@
     "name": "MONGO_INITDB_ROOT_PASSWORD",
     "value": "mongodevelpwd"
   },
-
+  {
+    "name": "MONGO_INITDB_HOSTNAME",
+    "value": "db"
+  },
+  {
+    "name": "MONGO_INITDB_PORT",
+    "value": "27017"
+  },
   {
     "name": "MONGO_INITDB_USERNAME",
     "value": "mongouser"
@@ -24,11 +31,6 @@
     "name": "MONGO_INITDB_PASSWORD",
     "value": "mongopwd"
   },
-
-
-
-
-
   {
     "name": "MONGO_INITDB_DATABASE",
     "value": "mongodb"

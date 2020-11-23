@@ -1,0 +1,28 @@
+{% include 'header.html' %}    
+    <h1>Hello!</h1>
+    <br/>
+
+    {% if message %}      
+      {{ message }}
+      <br/><br/>
+    {% endif %}
+    
+  
+    Please upload a DICOM file for inspection:<br/>
+    (can download from <a href="https://archive.org/download/7765403319950903/77654033_19950903.tar.bz2">here</a> some DCM samples)
+    <form class="form" action = "{{ url_for('save_upload',filename='file') }}" method = "POST" enctype = "multipart/form-data">
+        <input type = "file" name = "file" multiple/><br/>
+        <input type = "submit" value="Upload"/>
+    </form>
+    
+    {% if content %}      
+      <br/>or select from the history list:
+      (files already uploaded)
+
+      {% for img in content %}
+        </br><a href="/uploads/{{img["filename"]}}">{{img["filename"]}}</a> <a href="/delete/{{img["filename"]}}">delete</a>
+      {% endfor %}
+
+    {% endif %}
+    
+    {% include 'footer.html' %}    

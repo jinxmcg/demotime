@@ -1,0 +1,16 @@
+{% include 'header.html' %}    
+    <h1>Hello!</h1> 
+    <a href="/">Go home</a>
+    <br/>
+
+    {% if message %}      
+      {{ message }}
+      <br/><br/>
+    {% endif %}
+
+    {% if img %}
+        <img src="data:;base64,{{img}}"/>
+    {% endif %}
+
+
+    {% include 'footer.html' %}    
