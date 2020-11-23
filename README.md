@@ -12,6 +12,10 @@ What is happening behind the scenes
 6. Delete uploaded file file
 7. Invented some tests to learn and play with the pytest and flask testing environment
 
+# Todo
+[] validatate of the uploaded file
+[] optimize to write the preview to file/mongo 
+
 Estimated time to learn and develop:
 5:30h
 
