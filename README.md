@@ -15,6 +15,8 @@ What is happening behind the scenes
 # Todo
 - [ ] validatate of the uploaded file
 - [ ] optimize to write the preview to file/mongo 
+- [ ] add cache folders to .gitignore
+- [ ] add fast.ai and create a classifier for uploaded files
 
 Estimated time to learn and develop:
 5:30h
